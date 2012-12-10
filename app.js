@@ -12,8 +12,8 @@ Ext.application({
     requires: [
         'Ext.MessageBox'
     ],
-    models: ['Blogpost'],
-    stores: ['Blogpost'],
+    models: ['Blogpost', 'Page'],
+    stores: ['Blogpost', 'Location'],
     views: ['Main'],
 
     icon: {

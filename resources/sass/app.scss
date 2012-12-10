@@ -17,6 +17,10 @@
 @include sencha-msgbox;
 
 // Your custom code goes here...
+@include pictos-iconmask('list');
+
+img { max-width: 100%; }
+
 div.blogpost {
     padding: 4px;
 }

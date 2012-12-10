@@ -69,7 +69,8 @@ Ext.define('PhpBnl2013.view.Main', {
             title: 'Home',
             group: 'Home',
             slideButton: {
-                selector: 'toolbar'
+                selector: 'toolbar',
+                iconCls: 'list'
             },
 
             items: [
@@ -116,8 +117,12 @@ Ext.define('PhpBnl2013.view.Main', {
                     title: 'Location',
                     docked: 'top'
                 },{
-                    xtype: 'panel',
-                    html: '<img src="resources/images/guide.jpg" width="100%" />'
+                    xtype: 'dataview',
+                    scrollable: 'vertical',
+                    store: 'Location',
+                    styleHtmlContent: true,
+                    itemCls: 'blogpost',
+                    itemTpl: '<h1>{title}</h1><div>{content}</div>'
                 }
             ]
         },{
