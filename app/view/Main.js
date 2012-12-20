@@ -100,8 +100,13 @@ Ext.define('PhpBnl2013.view.Main', {
                     title: 'Schedule',
                     docked: 'top'
                 },{
-                    xtype: 'panel',
-                    html: '<img src="resources/images/guide.jpg" width="100%" />'
+                    xtype: 'list',
+                    id: "schedulelist",
+                    grouped: true,
+                    store: 'Schedule',
+                    styleHtmlContent: true,
+                    itemCls: 'blogpost',
+                    itemTpl: '<div class="room">{custom_fields.talk_room[0]}</div><h3>{title}</h3><p>speakers, speakers</p><div class="talktype">{custom_fields.talk_type[0]}</div>'
                 }
             ]
         },{

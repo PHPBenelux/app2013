@@ -6,7 +6,10 @@ Ext.define('PhpBnl2013.store.Location', {
         model: "PhpBnl2013.model.Page",
         proxy: {
             type: "jsonp",
-            url : "http://conference.phpbenelux.eu/2013/api/get_page/?slug=venue",
+            url : "http://conference.phpbenelux.eu/2013/api/get_page/",
+            extraParams: {
+                slug: 'venue'
+            },
             reader: {
                 type: "json",
                 rootProperty: "page"

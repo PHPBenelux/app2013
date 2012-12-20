@@ -12,9 +12,10 @@ Ext.application({
     requires: [
         'Ext.MessageBox'
     ],
-    models: ['Blogpost', 'Page'],
-    stores: ['Blogpost', 'Location', 'Crew', 'About', 'Sponsors'],
-    views: ['Main'],
+    controllers: ['Main'],
+    models: ['Blogpost', 'Page', 'Schedule', 'Room', 'Speaker'],
+    stores: ['Blogpost', 'Location', 'Crew', 'About', 'Sponsors', 'Schedule'],
+    views: ['Main', 'TalkDetail'],
 
     icon: {
         '57': 'resources/icons/Icon.png',
