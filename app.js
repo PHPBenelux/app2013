@@ -13,7 +13,7 @@ Ext.application({
         'Ext.MessageBox'
     ],
     models: ['Blogpost', 'Page'],
-    stores: ['Blogpost', 'Location'],
+    stores: ['Blogpost', 'Location', 'Crew', 'About', 'Sponsors'],
     views: ['Main'],
 
     icon: {

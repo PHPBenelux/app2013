@@ -138,8 +138,12 @@ Ext.define('PhpBnl2013.view.Main', {
                     title: 'Sponsors',
                     docked: 'top'
                 },{
-                    xtype: 'panel',
-                    html: '<img src="resources/images/guide.jpg" width="100%" />'
+                    xtype: 'dataview',
+                    scrollable: 'vertical',
+                    store: 'Sponsors',
+                    styleHtmlContent: true,
+                    itemCls: 'blogpost',
+                    itemTpl: '<h1>{title}</h1><div>{content}</div>'
                 }
             ]
         },{
@@ -155,8 +159,12 @@ Ext.define('PhpBnl2013.view.Main', {
                     title: 'About',
                     docked: 'top'
                 },{
-                    xtype: 'panel',
-                    html: '<img src="resources/images/guide.jpg" width="100%" />'
+                    xtype: 'dataview',
+                    scrollable: 'vertical',
+                    store: 'About',
+                    styleHtmlContent: true,
+                    itemCls: 'blogpost',
+                    itemTpl: '<h1>{title}</h1><div>{content}</div>'
                 }
             ]
 
@@ -173,8 +181,12 @@ Ext.define('PhpBnl2013.view.Main', {
                     title: 'Crew',
                     docked: 'top'
                 },{
-                    xtype: 'panel',
-                    html: '<img src="resources/images/guide.jpg" width="100%" />'
+                    xtype: 'dataview',
+                    scrollable: 'vertical',
+                    store: 'Crew',
+                    styleHtmlContent: true,
+                    itemCls: 'blogpost',
+                    itemTpl: '<h1>{title}</h1><div>{content}</div>'
                 }
             ]
         }
