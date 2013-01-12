@@ -3,16 +3,10 @@ Ext.define('PhpBnl2013.store.Sponsors', {
     requires: ['Ext.data.proxy.JsonP'],
 
     config: {
-        model: "PhpBnl2013.model.Page",
+        model: "PhpBnl2013.model.Sponsor",
         proxy: {
             type: "jsonp",
-            url : "http://conference.phpbenelux.eu/2013/api/get_recent_posts/",
-            extraParams: {
-                count: 1000,
-                post_type: 'sponsor',
-                order: 'ASC',
-                orderby: 'sponsor_method'
-            },
+            url : "http://conference.phpbenelux.eu/2013/?json=phpbenelux.sponsors",
             reader: {
                 type: "json",
                 rootProperty: "posts"

@@ -10,22 +10,39 @@ Ext.define('PhpBnl2013.store.Schedule', {
         model: "PhpBnl2013.model.Schedule",
         proxy: {
             type: "jsonp",
-            url : "http://conference.phpbenelux.eu/2013/api/get_recent_posts/",
-            extraParams: {
-                post_type: 'talk',
-                orderby: 'schedule_start',
-                order: 'ASC',
-                count: 1000,
-                custom_fields: 'schedule_start,schedule_end,talk_type,talk_room,speakers,picture'
-            },
+            url : "http://conference.phpbenelux.eu/2013/?json=phpbenelux.schedule",
             reader: {
                 type: "json",
                 rootProperty: "posts"
             }
         },
+        sorters: [
+            {
+                property: 'timestamp_start',
+                direction: 'ASC'
+            },
+            {
+                sorterFn: function(record1, record2) {
+                    var name1 = record1.data.room.post_title,
+                        name2 = record2.data.room.post_title;
+
+                    return name1 > name2 ? 1 : (name1 === name2 ? 0 : -1);
+                }
+            }
+        ],
         grouper: {
             groupFn: function (record) {
-                return record.data.custom_fields.schedule_start[0];
+                var start = record.data.timestamp_start,
+                    end = record.data.timestamp_end,
+                    startH = Ext.util.Format.leftPad(start.getHours(), 2, '0'),
+                    startM = Ext.util.Format.leftPad(start.getMinutes(), 2, '0'),
+                    endH = Ext.util.Format.leftPad(end.getHours(), 2, '0'),
+                    endM = Ext.util.Format.leftPad(end.getMinutes(), 2, '0');
+
+                start = "January " + start.getDate() + " " + startH + ":" + startM;
+                end =  endH + ":" + endM;
+
+                return start + ' - ' + end;
             }
         },
         autoLoad: true

@@ -3,15 +3,10 @@ Ext.define('PhpBnl2013.store.Crew', {
     requires: ['Ext.data.proxy.JsonP'],
 
     config: {
-        model: "PhpBnl2013.model.Page",
+        model: "PhpBnl2013.model.Crew",
         proxy: {
             type: "jsonp",
-            url : "http://conference.phpbenelux.eu/2013/api/get_recent_posts/",
-            extraParams: {
-                post_type: 'crew',
-                orderby: 'title',
-                order: 'ASC'
-            },
+            url : "http://conference.phpbenelux.eu/2013/?json=phpbenelux.crew",
             reader: {
                 type: "json",
                 rootProperty: "posts"

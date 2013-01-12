@@ -105,8 +105,19 @@ Ext.define('PhpBnl2013.view.Main', {
                     grouped: true,
                     store: 'Schedule',
                     styleHtmlContent: true,
-                    itemCls: 'blogpost',
-                    itemTpl: '<div class="room">{custom_fields.talk_room[0]}</div><h3>{title}</h3><p>speakers, speakers</p><div class="talktype">{custom_fields.talk_type[0]}</div>'
+                    itemCls: 'scheduleitem',
+                    itemTpl: [
+                        '<div class="room">',
+                            '{room.post_title}',
+                        '</div>',
+                        '<div class="main">',
+                            '<h3>{title}</h3>',
+                            '<tpl for="speaker">',
+                                '<p class="speaker">{post_title}</p>',
+                            '</tpl>',
+                        '</div>',
+                        '<div class="talktype">{talk_type}</div>'
+                    ].join("")
                 }
             ]
         },{
@@ -148,7 +159,7 @@ Ext.define('PhpBnl2013.view.Main', {
                     store: 'Sponsors',
                     styleHtmlContent: true,
                     itemCls: 'blogpost',
-                    itemTpl: '<h1>{title}</h1><div>{content}</div>'
+                    itemTpl: '<h1>{post_title}</h1><div><img src="{logo}">{post_content}</div>'
                 }
             ]
         },{
@@ -191,7 +202,7 @@ Ext.define('PhpBnl2013.view.Main', {
                     store: 'Crew',
                     styleHtmlContent: true,
                     itemCls: 'blogpost',
-                    itemTpl: '<h1>{title}</h1><div>{content}</div>'
+                    itemTpl: '<h1>{post_title}</h1><div><img src="{picture}">{post_content}</div>'
                 }
             ]
         }
