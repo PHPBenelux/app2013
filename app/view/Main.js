@@ -107,16 +107,18 @@ Ext.define('PhpBnl2013.view.Main', {
                     styleHtmlContent: true,
                     itemCls: 'scheduleitem',
                     itemTpl: [
-                        '<div class="room">',
-                            '{room.post_title}',
-                        '</div>',
+                        '<div class="room {room.post_name}"></div>',
                         '<div class="main">',
                             '<h3>{title}</h3>',
-                            '<tpl for="speaker">',
-                                '<p class="speaker">{post_title}</p>',
-                            '</tpl>',
+                            '<p class="speaker">',
+                                '<tpl for="speaker">',
+                                    '<span class="name">{post_title}</span>',
+                                '</tpl>',
+                            '</p>',
                         '</div>',
-                        '<div class="talktype">{talk_type}</div>'
+                        '<tpl if="talk_type !== \'nontalk\'">',
+                            '<div class="more">&nbsp;</div>',
+                        '</tpl>'
                     ].join("")
                 }
             ]

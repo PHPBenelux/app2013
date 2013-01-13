@@ -34,8 +34,30 @@ div.blogpost h1 {
 
 
 div.scheduleitem .room {
-  font-size: 0.6em;
+  width: 10px;
+  height: 100%;
+  background-color: #ccc;
   float:left;
+}
+
+div.scheduleitem .room.track-a {
+  background-color: rgb(9, 75, 143);
+}
+
+div.scheduleitem .room.track-b {
+  background-color: rgb(185, 213, 142);
+}
+
+div.scheduleitem .room.track-c {
+  background-color: rgb(196, 98, 106);
+}
+
+div.scheduleitem .room.windows-azure-plaza {
+  background-color: #333;
+}
+
+div.scheduleitem .room tutorial-room {
+  background-color: #efefef;
 }
 
 div.scheduleitem .main {
@@ -44,14 +66,24 @@ div.scheduleitem .main {
 
 div.scheduleitem h3 {
   font-size: 1.2em;
+  font-weight: bold;
 }
 
 div.scheduleitem .speaker {
   font-size: 1em;
 }
 
-div.scheduleitem .talktype {
-  font-size: 1em;
+div.scheduleitem .speaker .name {
+  margin: 3px;
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+div.scheduleitem .more {
+  width: 15px;
+  height: 15px;
+  background-image: url('../images/moreIcon.jpg');
   float: right;
 }
 
