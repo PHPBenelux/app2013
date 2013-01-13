@@ -22,6 +22,9 @@ Ext.define('PhpBnl2013.controller.Main', {
     openItem: function(cmp, index, target, record) {
         var recordData = record.data,
             toolbar, content;
+        if (record.data.talk_type == 'nontalk') {
+            return true;
+        }
 
         if (!this.talkDetail) {
             this.talkDetail = Ext.create('PhpBnl2013.view.TalkDetail');
